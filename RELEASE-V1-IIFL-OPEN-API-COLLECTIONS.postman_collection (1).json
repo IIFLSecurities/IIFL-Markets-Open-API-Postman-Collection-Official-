@@ -1,0 +1,986 @@
+{
+	"info": {
+		"_postman_id": "6e99bcfa-62f4-4f34-a9ca-a63241286b2a",
+		"name": "RELEASE-V1-IIFL-OPEN-API-COLLECTIONS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34056407",
+		"_collection_link": "https://lunar-shadow-756581.postman.co/workspace/All-APIs~d6895111-88e1-41ee-84ab-667f8e91309b/collection/34056407-6e99bcfa-62f4-4f34-a9ca-a63241286b2a?action=share&source=collection_link&creator=34056407"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User Session ",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"checkSum\":\"d7e7fcd0c8821fc33e551f8c19c964110f08323c61dcd6970f8de39d53ec6c6a\"\r\n}\r\n\r\n/*\r\nSHA256 encryption of clientId+authCode+appSecret\r\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/getusersession",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"getusersession"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{prod_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/profile",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Limits",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{prod_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/limits",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"limits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIxVks4TEhlRnRvSmp6YWk1RmJlSGNPbDI3ekpGanBScTE2Vmt4eGJBZ0ZjIn0.eyJleHAiOjE3NTUzMjI3MzAsImlhdCI6MTczOTc5NzAyNSwianRpIjoiNzk3ODg2NzEtZGNiZC00ZTFjLTgyMzctMWExNDUzYjFiZGM0IiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5paWZsc2VjdXJpdGllcy5jb20vcmVhbG1zL0lJRkwiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNjM4MDYxNTUtMzY2ZC00MjQwLWEzZDItMDcwOTc1YTAwZTIxIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiSUlGTCIsInNpZCI6ImRjMTE5M2JjLTQ5YjEtNGExYy1hYWYyLWUxZjYyOTEyNWU1OCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovLzEwLjEyNS42OC4xNDQ6ODA4MC8iXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtaWlmbCIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJJSUZMIjp7InJvbGVzIjpbIkdVRVNUX1VTRVIiLCJBQ1RJVkVfVVNFUiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJ1Y2MiOiIzMTc0OTYyNCIsInNvbGFjZV9ncm91cCI6IlNVQlNDUklCRVJfQ0xJRU5UIiwibmFtZSI6IktVTUFSIFZJU0hBTCBHVVBUQSBOQSIsInByZWZlcnJlZF91c2VybmFtZSI6IjMxNzQ5NjI0IiwiZ2l2ZW5fbmFtZSI6IktVTUFSIFZJU0hBTCBHVVBUQSIsImZhbWlseV9uYW1lIjoiTkEiLCJlbWFpbCI6InZpc2hhbC54ZW5vbkBnbWFpbC5jb20ifQ.2EvcaCsGytLNzh1X_BikR1lgrVnLTI_9G8EkWyjsA5P5OYr9Q5RLEjeYmO4M195p-M9AppvoMAfyG4BhCNbkI9SSfdH_Za0jGeQiCqDB_eaA3UIretkBHGQnC1XVOvDnHuA65Vtdewsc3JSHkSAbrTQ_yEn9KOUN0aW_1SeXGXGmOLhUCUg0Nd96yD-Z85K3sXOFOYoIyWUUmiZJCsRQTn-x4JK2dtGQ33avBdSwcCtX1s4fX_tvXy3mt9V7AWyzbqWaEKZ0Iftvp5FJdSRA83Tg6cTdjpB4pyJ_mVn9yqwLw60LAkL_ucxMJv-U2Nd-A6dh9jruxav1H66yYX51vA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/profile/logout",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"profile",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Margin",
+			"item": [
+				{
+					"name": "Span Exposure",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{prod_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"instrumentId\": \"35003\",\r\n        \"exchange\": \"NSEFO\",\r\n        \"quantity\": 125,\r\n        \"transactionType\": \"buy\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/spanexposure",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"spanexposure"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Preorder margin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{prod_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exchange\": \"NSEFO\",\r\n    \"instrumentId\": \"68428\",\r\n    \"transactionType\": \"SELL\",\r\n    \"quantity\": 75,\r\n    \"product\": \"intraday\",\r\n    \"orderComplexity\": \"REGULAR\",\r\n    \"orderType\": \"MARKET\",\r\n    \"validity\": \"day\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/preordermargin",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"preordermargin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order Management",
+			"item": [
+				{
+					"name": "Place",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{prod_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"exchange\": \"NSEEQ\",\r\n        \"instrumentId\": \"14366\",\r\n        \"transactionType\": \"SELL\",\r\n        \"quantity\": 100,\r\n        \"product\": \"DELIVERY\",\r\n        \"orderComplexity\": \"AMO\",\r\n        \"orderType\": \"MARKET\",\r\n        \"validity\": \"DAY\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/orders",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{prod_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"price\" : \"7.81\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/orders/250227000000139",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"orders",
+								"250227000000139"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{prod_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/orders/250304000000042",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"orders",
+								"250304000000042"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{prod_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/orders",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order History",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{prod_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/orders/25022700000013",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"orders",
+								"25022700000013"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Trade Book",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{prod_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/trades",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"trades"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Portfolio",
+			"item": [
+				{
+					"name": "Holdings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{prod_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/holdings",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"holdings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Positions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{prod_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/positions",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"positions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Market Data APIs",
+			"item": [
+				{
+					"name": "Historical Candlestick Chart Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{prod_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exchange\": \"NSEEQ\",\r\n    \"instrumentId\": \"10\",\r\n    \"interval\": \"1 minute\",\r\n    \"fromDate\": \"11-nov-2024\",\r\n    \"toDate\": \"19-nov-2024\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/marketdata/historicaldata",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"marketdata",
+								"historicaldata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Market Quotes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{prod_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"exchange\":\"NSEEQ\",\r\n    \"instrumentId\":\"14366\"\r\n}]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/marketdata/marketquotes",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"marketdata",
+								"marketquotes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Market Depth",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{prod_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exchange\":\"NSEEQ\",\r\n    \"instrumentId\":\"2885\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/marketdata/marketdepth",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"marketdata",
+								"marketdepth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Open Interest",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{prod_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exchange\":\"NSEE\",\r\n    \"instrumentId\":\"2885\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/marketdata/openinterest",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"marketdata",
+								"openinterest"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Instrument Details",
+			"item": [
+				{
+					"name": "NSEEQ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/contractfiles/NSEEQ.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"contractfiles",
+								"NSEEQ.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BSEEQ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/contractfiles/BSEEQ.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"contractfiles",
+								"BSEEQ.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NSEFO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/contractfiles/NSEFO.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"contractfiles",
+								"NSEFO.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BSEFO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/contractfiles/BSEFO.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"contractfiles",
+								"BSEFO.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NSECOMM",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/contractfiles/NSECOMM.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"contractfiles",
+								"NSECOMM.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MCXCOMM",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/contractfiles/MCXCOMM.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"contractfiles",
+								"MCXCOMM.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NSECURR",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/contractfiles/NSECURR.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"contractfiles",
+								"NSECURR.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BSECURR",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/contractfiles/BSECURR.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"contractfiles",
+								"BSECURR.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INDICES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.iiflcapital.com/v1/contractfiles/INDICES.json",
+							"protocol": "https",
+							"host": [
+								"api",
+								"iiflcapital",
+								"com"
+							],
+							"path": [
+								"v1",
+								"contractfiles",
+								"INDICES.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "AUTH_BASE_URL",
+			"value": "http://api.iiflcapital.com/v1/",
+			"type": "string"
+		},
+		{
+			"key": "SSO_AUTH_BASE_URL",
+			"value": "http://api.iiflcapital.com/v1/",
+			"type": "string"
+		},
+		{
+			"key": "OPEN_API_BASE_URL",
+			"value": "http://api.iiflcapital.com/v1/",
+			"type": "string"
+		},
+		{
+			"key": "OPEN_API_ORDER_BASE_URL",
+			"value": "http://api.iiflcapital.com/v1/",
+			"type": "string"
+		}
+	]
+}
